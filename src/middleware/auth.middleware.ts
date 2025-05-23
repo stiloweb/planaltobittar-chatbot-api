@@ -1,10 +1,11 @@
 import { Injectable, NestMiddleware } from '@nestjs/common'
 import { Request, Response, NextFunction } from 'express'
+import { env } from 'src/config/env.config'
 
 @Injectable()
 export class AuthMiddleware implements NestMiddleware {
     // TODO: Replace with a real token
-    private readonly FIXED_TOKEN = '123'
+    private readonly FIXED_TOKEN = env.FIXED_TOKEN
 
     use(req: Request, res: Response, next: NextFunction) {
         const token = req.headers.authorization?.split(' ')[1]
