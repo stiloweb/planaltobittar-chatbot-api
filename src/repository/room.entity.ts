@@ -34,8 +34,4 @@ export class Room {
     @ApiProperty({ description: 'Usuário que alterou por último' })
     @Column({ type: 'int', nullable: true })
     qrtAlteracaoUsuario: number
-
-    @ApiProperty({ description: 'Valor do quarto' })
-    @Column({ type: 'float', nullable: true })
-    qrtValor: number
 }

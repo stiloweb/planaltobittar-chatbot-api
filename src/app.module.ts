@@ -6,6 +6,7 @@ import { Reservation } from './repository/reservation.entity'
 import { ReservationModule } from './modules/reservation/reservation.module'
 import { env } from './config/env.config'
 import { AuthMiddleware } from './middleware/auth.middleware'
+import { RoomTax } from './repository/room-tax.entity'
 
 @Module({
     imports: [
@@ -16,7 +17,7 @@ import { AuthMiddleware } from './middleware/auth.middleware'
             username: env.DB_USER,
             password: env.DB_PASSWORD,
             database: env.DB_DATABASE,
-            entities: [Room, Reservation],
+            entities: [Room, Reservation, RoomTax],
             synchronize: true,
         }),
         RoomModule,
