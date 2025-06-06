@@ -7,8 +7,8 @@ import { RoomTax } from 'src/repository/room-tax.entity'
 import { RoomService } from './room.service'
 
 interface RoomWithTaxes extends Room {
-    totalTaxValue: number
-    taxes: RoomTax[]
+    totalTarifas: number
+    tarifas: RoomTax[]
 }
 
 @ApiTags('rooms')
@@ -53,19 +53,7 @@ export class RoomController {
                 qrtDescricao: { type: 'string' },
                 qrtSituacao: { type: 'string' },
                 qrtValor: { type: 'number' },
-                totalTaxValue: { type: 'number', description: 'Valor total das taxas no período' },
-                taxes: {
-                    type: 'array',
-                    items: {
-                        type: 'object',
-                        properties: {
-                            qtrQuarto: { type: 'number' },
-                            qtrData: { type: 'string', format: 'date' },
-                            qtrValor: { type: 'number' },
-                            qtrQuantidade: { type: 'string' },
-                        },
-                    },
-                },
+                qrtValorTaxa: { type: 'number', description: 'Valor total das taxas no período' },
             },
         },
     })
