@@ -34,4 +34,8 @@ export class Room {
     @ApiProperty({ description: 'Usuário que alterou por último' })
     @Column({ type: 'int', nullable: true })
     qrtAlteracaoUsuario: number
+
+    @ApiProperty({ description: 'URL da imagem principal do quarto' })
+    @Column({ type: 'text', nullable: true })
+    qrtImagemUrl: string
 }
